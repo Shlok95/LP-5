@@ -11,5 +11,9 @@ Run all the files with .cpp extension on Online Compiler preferably OnlineGDB.
 
 
 
+Change the Runtime Hardware Accelarator to GPU before executing CUDA programs
+
+
+
 
 CUDA program for Vector Addition should be executed on Colab
