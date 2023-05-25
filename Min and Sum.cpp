@@ -5,18 +5,18 @@
 using namespace std;
 
 void
-max_reduction (int arr[], int n)
+min_reduction (int arr[], int n)
 {
-  int max_value = INT_MIN;
-#pragma omp parallel for reduction(max: max_value)
+  int max_value = INT_MAX;
+#pragma omp parallel for reduction(min: min_value)
   for (int i = 0; i < n; i++)
     {
-      if (arr[i] > max_value)
+      if (arr[i] < max_value)
 	{
-	  max_value = arr[i];
+	  min_value = arr[i];
 	}
     }
-  cout << "Maximum value: " << max_value << endl;
+  cout << "Minimum value: " << min_value << endl;
 }
 
 void
@@ -45,7 +45,7 @@ main ()
 // int arr[] = {5, 2, 9, 1, 7, 6, 8, 3, 4};
 // int n = size(arr);
   
-  max_reduction (arr, n);
+  min_reduction (arr, n);
   sum_reduction (arr, n);
   
 }
